@@ -1,3 +1,4 @@
+//menu desplegable del nav cuando este se hace para movil o su ventana se achica 
 const menuButton = document.getElementById('menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 
@@ -6,25 +7,29 @@ menuButton.addEventListener('click', () => {
     mobileMenu.classList.toggle('flex');
 });
 
-// Script para el efecto de scroll
-const navBar = document.getElementById('main-nav');
-const targetSection = document.getElementById('porque-elegirnos');
+//este es un bloque donde esta la logica de mi carrousell de marcas 
+// carousel
+const carousel = document.getElementById('carousel');
+const totalItems = carousel.children.length / 2; // sólo contamos los originales
+const itemWidth = carousel.children[0].offsetWidth + 32; 
+let index = 0;
 
-if (navBar && targetSection) {
-    window.addEventListener('scroll', () => {
-        const sectionTop = targetSection.getBoundingClientRect().top;
-        const threshold = navBar.offsetHeight;
+function moveCarousel() {
+  index++;
+  carousel.style.transition = 'transform 0.5s linear';
+  carousel.style.transform = `translateX(-${index * itemWidth}px)`;
 
-        // Si la sección "por qué elegirnos" llega arriba de la barra de navegación
-        if (sectionTop <= threshold) {
-            // Añade la clase de color blanco sólido
-            navBar.classList.add('bg-white');
-            // Y elimina la de color transparente
-            navBar.classList.remove('bg-white/30');
-        } else {
-            // Si no, la hace transparente de nuevo
-            navBar.classList.add('bg-white/30');
-            navBar.classList.remove('bg-white');
-        }
-    });
+  // Reset para loop
+  if (index >= totalItems) {
+    setTimeout(() => {
+      carousel.style.transition = 'none';
+      carousel.style.transform = `translateX(0)`;
+      index = 0;
+    }, 500); // coincide con la duración de la transición
+  }
 }
+
+// Avanza automáticamente cada 3 segundos
+setInterval(moveCarousel, 3000);
+
+

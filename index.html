@@ -12,51 +12,55 @@
 </head>
 
 
-<body>
+<body class="relative min-h-screen 
+            bg-[url('https://media.adeo.com/media/3995641/media.jpeg?width=600&crop=16:9')] 
+            bg-cover bg-fixed bg-center
+            before:content-[''] before:absolute before:inset-0 before:bg-black/70">
 
-    <nav id="main-nav" class="bg-white/30 shadow-lg fixed top-0 left-0 w-full z-50">
+<!--BARRA DE NAVEGACION -->
+    <nav id="main-nav" class="bg-white shadow-lg fixed top-0 left-0 w-full z-50">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#" class="flex items-center space-x-2 text-2xl font-bold text-gray-800 transition-colors duration-300 ease-in-out">
                 <div class="logo-cube-container relative">
                     <div class="logo-cube">
-                        <div class="face front"></div>
-                        <div class="face back"></div>
-                        <div class="face right"></div>
-                        <div class="face left"></div>
-                        <div class="face top"></div>
-                        <div class="face bottom"></div>
-                    </div>
-                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5 h-5 flex items-center justify-center">
+                    <div class="face front"></div>
+                    <div class="face back"></div>
+                    <div class="face right"></div>
+                    <div class="face left"></div>
+                    <div class="face top"></div>
+                    <div class="face bottom"></div>
+                </div>
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5 h-5 flex items-center justify-center">
                     <div class="w-5 h-5 border-2 border-white rounded-full flex items-center justify-center bg-transparent">
-                    <span class="text-white text-xs font-bold transform -rotate-90">S</span>
-                    </div>
+                        <span class="text-white text-xs font-bold transform -rotate-90">S</span>
                     </div>
                 </div>
-                <span>Re-acon Refrigeración</span>
-            </a>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="#" class="nav-link relative">Inicio</a>
-                <a href="#productos" class="nav-link relative">Productos</a>
-                <a href="#porque-elegirnos" class="nav-link relative">Servicios</a>
-                <a href="#contacto" class="nav-link relative">Contacto</a>
             </div>
-            <button id="menu-button" class="md:hidden text-gray-800 focus:outline-none">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
+            <span>Re-acon Refrigeración</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6">
+            <a href="#" class="nav-link relative">Inicio</a>
+            <a href="#productos" class="nav-link relative">Productos</a>
+            <a href="#porque-elegirnos" class="nav-link relative">Servicios</a>
+            <a href="#contacto" class="nav-link relative">Contacto</a>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden transition-all duration-300 ease-in-out">
-            <div class="bg-white/30 backdrop-blur-sm shadow-lg py-2 flex flex-col">
-                <a href="#" class="block px-4 py-3 text-gray-800 hover:!bg-white/10">Inicio</a>
-                <a href="#productos" class="block px-4 py-3 text-gray-800 hover:!bg-white/10">Productos</a>
-                <a href="#porque-elegirnos" class="block px-4 py-3 text-gray-800 hover:!bg-white/10">Servicios</a>
-                <a href="#contacto" class="block px-4 py-3 text-gray-800 hover:!bg-white/10">Contacto</a>
-            </div>
+        <button id="menu-button" class="md:hidden text-gray-800 focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden transition-all duration-300 ease-in-out">
+        <div class="bg-white/30 backdrop-blur-sm shadow-lg py-2 flex flex-col">
+            <a href="#" class="block px-4 py-3 text-gray-800 hover:!bg-white/10">Inicio</a>
+            <a href="#productos" class="block px-4 py-3 text-gray-800 hover:!bg-white/10">Productos</a>
+            <a href="#porque-elegirnos" class="block px-4 py-3 text-gray-800 hover:!bg-white/10">Servicios</a>
+            <a href="#contacto" class="block px-4 py-3 text-gray-800 hover:!bg-white/10">Contacto</a>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <section class="relative text-white pt-20 pb-48 px-5 text-center font-sans overflow-hidden" style="background-color: rgba(51, 51, 51, 0.7);">
+    <section class="relative text-white pt-20 pb-48 px-5 text-center font-sans overflow-hidden">
         <div class="relative z-20 max-w-7xl mx-auto">
             <h2 class="text-4xl text-white mb-5 font-bold italic">El Confort que tu Hogar Merece</h2>
             <p class="text-lg leading-relaxed mb-4 text-gray-300">
@@ -68,33 +72,37 @@
         </div>
     </section>
 
-
-    <section id="porque-elegirnos" class="bg-gray-100 py-16">
+<!-- POR QUE ELEGIRNOS -->.
+<section id="porque-elegirnos" class="bg-white py-16">
     <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold text-blue-900">¿Por Qué Elegirnos?</h2>
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div class="p-6 bg-white rounded-lg shadow-md card-elevacion" data-aos="fade-down" data-aos-duration="1500">
-    <div class="text-blue-500 mb-4 text-4xl">
-        <i class="fas fa-hand-holding-heart"></i>
-    </div>
-    <h3 class="text-xl font-semibold">Nuestro Compromiso</h3>
-    <p class="text-gray-600 mt-2">Nuestra pasión por el servicio nos ha llevado a ser líderes en el sector, Más de 40 años en el mercado nos avalan...</p>
-</div>
-            <div class="p-6 bg-white rounded-lg shadow-md card-elevacion" data-aos="fade-right" data-aos-duration="1500">
+        <h2 class="text-3xl font-bold text-blue-900 mb-8">¿Por Qué Elegirnos?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Card 1 -->
+            <div class="p-6 bg-white rounded-lg shadow-md hover:translate-y-3 hover:scale-105 hover:shadow-xl transition-transform duration-300" data-aos="fade-down" data-aos-duration="1500">
+                <div class="text-blue-500 mb-4 text-4xl">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h3 class="text-xl font-semibold">Nuestro Compromiso</h3>
+                <p class="text-gray-600 mt-2">Nuestra pasión por el servicio nos ha llevado a ser líderes en el sector, Más de 40 años en el mercado nos avalan...</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="p-6 bg-white rounded-lg shadow-md hover:translate-y-3 hover:scale-105 hover:shadow-xl transition-transform duration-300" data-aos="fade-right" data-aos-duration="1500">
                 <div class="text-blue-500 mb-4 text-4xl">
                     <i class="fas fa-tools"></i>
                 </div>
                 <h3 class="text-xl font-semibold">Instalación Profesional</h3>
                 <p class="text-gray-600 mt-2">Técnicos certificados con años de experiencia aseguran la más alta calidad en cada servicio.</p>
             </div>
-            <div class="p-6 bg-white rounded-lg shadow-md card-elevacion" data-aos="fade-left" data-aos-duration="1500">
+            <!-- Card 3 -->
+            <div class="p-6 bg-white rounded-lg shadow-md hover:translate-y-3 hover:scale-105 hover:shadow-xl transition-transform duration-300" data-aos="fade-left" data-aos-duration="1500">
                 <div class="text-blue-500 mb-4 text-4xl">
                     <i class="fas fa-handshake"></i>
                 </div>
                 <h3 class="text-xl font-semibold">Atención al Cliente</h3>
                 <p class="text-gray-600 mt-2">Estamos siempre disponibles para resolver tus dudas.</p>
             </div>
-            <div class="p-6 bg-white rounded-lg shadow-md card-elevacion" data-aos="fade-up" data-aos-duration="1500">
+            <!-- Card 4 -->
+            <div class="p-6 bg-white rounded-lg shadow-md hover:translate-y-3 hover:scale-105 hover:shadow-xl transition-transform duration-300" data-aos="fade-up" data-aos-duration="1500">
                 <div class="text-blue-500 mb-4 text-4xl">
                     <i class="fas fa-shield-alt"></i>
                 </div>
@@ -105,6 +113,8 @@
     </div>
 </section>
 
+
+<!-- SECCION VIDEO CORRIENDO -->.
     <section class="relative w-full h-96 overflow-hidden flex items-center justify-center text-white">
         <div class="absolute inset-0 z-0">
             <video class="w-full h-full object-cover" 
@@ -121,6 +131,7 @@
         </div>
     </section>
 
+<!-- SECCION PRODUCTOS -->.
     <section id="productos" class="py-16 seccion-productos-opaca">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold text-blue-900">Nuestros Productos</h2>
@@ -162,40 +173,116 @@
         </div>
     </section>
 
+<!-- SECCION CARROUSELL DE LOGOS DE MARCAS CON LA QUE TRABAJAMOS -->
+    <!-- Carrusel -->
+<section class="bg-gray-50 py-12">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold text-gray-900">Confiamos en</h2>
+    <p class="mt-2 text-lg text-gray-600">Trabajamos con marcas líderes del mercado.</p>
+  </div>
 
- <section id="contacto" class="bg-gray-100 py-16 text-gray-800">
-    <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold">Colaboremos juntos</h2>
-        <p class="mt-4 text-xl">
-            Estamos listos para transformar tus ideas en realidades. Contáctanos para servicios de instalación profesional en pequeños y grandes proyectos.
-        </p>
-        
-        <div class="mt-8 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <a href="https://wa.me/5491163843929?text=Hola%2C%20quisiera%20saber%20más%20sobre%20sus%20servicios%20de%20aire%20acondicionado." target="_blank" class="shiny-button inline-block bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 w-full text-center relative overflow-hidden">
-                Cel.: 11-6384-3929 / 3930
-            </a>
-         <a href="https://www.instagram.com/tu_usuario_de_instagram" target="_blank" class="shiny-button inline-flex items-center justify-center bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 w-full sm:w-48 text-center relative overflow-hidden space-x-2">
-    <i class="fab fa-instagram"></i>
-    <span>Instagram</span>
-</a>
-            <a href="mailto:reaconaire@yahoo.com.ar" target="_blank" class="shiny-button inline-block bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 w-full text-center relative overflow-hidden">
-                reaconaire@yahoo.com.ar
-            </a>
-        </div>
+  <div class="mt-8 max-w-6xl mx-auto px-4 relative overflow-hidden">
+    <!-- Carrusel -->
+    <div class="flex transition-transform duration-500" id="carousel">
+      <a href="#" class="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+        <img src="https://cdn.simpleicons.org/lg/000000" alt="LG" class="w-full h-full object-contain">
+      </a>
+      <a href="#" class="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+        <img src="https://cdn.simpleicons.org/apple/000000" alt="Apple" class="w-full h-full object-contain">
+      </a>
+      <a href="#" class="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+        <img src="https://cdn.simpleicons.org/google/000000" alt="Google" class="w-full h-full object-contain">
+      </a>
+      <a href="#" class="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+        <img src="https://cdn.simpleicons.org/microsoft/000000" alt="Microsoft" class="w-full h-full object-contain">
+      </a>
+      <a href="#" class="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+        <img src="https://cdn.simpleicons.org/amazon/000000" alt="Amazon" class="w-full h-full object-contain">
+      </a>
     </div>
+  </div>
 </section>
 
-    <footer class="bg-gray-800 text-gray-300 py-8">
-        <div class="container mx-auto text-center px-6">
-            <p>&copy; 2025 re-acon. Todos los derechos reservados.</p>
-            <p class="text-xs text-gray-500 text-center">
-                Contenido audiovisual empleado de forma ética y sin intención maliciosa.
-            </p>
-            <div class="mt-4">
-                <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-facebook-square"></i></a>
-            </div>
-        </div>
-    </footer>
+
+<!-- SECCION ES DE CALCULADORA DE METROS CUADRADOS PARA AIRES  -->
+
+<section id="calculadora" class="bg-gray-100 py-16 text-gray-800">
+  <div class="max-w-md mx-auto p-6 bg-white rounded-2xl shadow-lg">
+    <h2 class="text-3xl font-bold text-center mb-6">Calculador de Metros Cuadrados</h2>
+
+    <form id="calcForm" class="space-y-4">
+      <div>
+        <label class="block font-medium mb-1" for="ancho">Ancho (m)</label>
+        <input id="ancho" type="number" step="0.1" required
+          class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <div>
+        <label class="block font-medium mb-1" for="largo">Largo (m)</label>
+        <input id="largo" type="number" step="0.1" required
+          class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <button type="submit"
+        class="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition">
+        Calcular
+      </button>
+    </form>
+
+    <div id="resultado" class="mt-6 text-center hidden">
+      <p class="text-lg font-semibold">Área total: <span id="area" class="font-bold text-blue-600"></span> m²</p>
+      <div id="recomendacion" class="mt-4"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCION CONTACTO -->.
+ <!-- SECCION CONTACTO -->
+<section id="contacto" class="bg-gray-100 py-16 text-gray-800 text-center">
+  <h3 class="text-4xl font-bold mb-2">Contacto</h3>
+  <h4 class="text-xl text-gray-600 mb-6">Colaboremos</h4>
+
+  <div class="flex justify-center gap-6">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/541163843929"
+       target="_blank"
+       class="inline-flex items-center justify-center rounded-full bg-green-500 text-white w-16 h-16 text-3xl hover:bg-green-600 transition">
+       <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Instagram -->
+    <a href="#"
+       target="_blank"
+       class="inline-flex items-center justify-center rounded-full bg-pink-500 text-white w-16 h-16 text-3xl hover:bg-pink-600 transition">
+       <i class="fab fa-instagram"></i>
+    </a>
+
+    <!-- Yahoo -->
+    <a href="mailto:reaconaire@yahoo.com.ar"
+       target="_blank"
+       class="inline-flex items-center justify-center rounded-full bg-purple-500 text-white w-16 h-16 text-3xl hover:bg-purple-600 transition">
+       <i class="fab fa-yahoo"></i>
+    </a>
+
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/ReAcon2000"
+       target="_blank"
+       class="inline-flex items-center justify-center rounded-full bg-blue-500 text-white w-16 h-16 text-3xl hover:bg-blue-600 transition">
+       <i class="fab fa-facebook-f"></i>
+    </a>
+  </div>
+</section>
+
+
+<!-- SECCION FOOTER PIE DE PAGUINA -->.
+ <footer class="bg-gray-800 text-gray-300 py-8">
+    <div class="container mx-auto text-center px-6">
+        <p>&copy; 2025 re-acon. Todos los derechos reservados.</p>
+        <p class="text-xs text-gray-500 mt-2">
+            Contenido audiovisual empleado de forma ética y sin intención maliciosa.
+        </p>
+    </div>
+</footer>
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
