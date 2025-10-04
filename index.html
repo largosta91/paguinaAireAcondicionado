@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RE-ACON.com.ar</title>
+    <title>re-acon.com.ar</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
@@ -11,68 +11,83 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-
 <body class="relative min-h-screen 
-            bg-[url('https://media.adeo.com/media/3995641/media.jpeg?width=600&crop=16:9')] 
+            bg-('imagenprincipalbody')
             bg-cover bg-fixed bg-center
             before:content-[''] before:absolute before:inset-0 before:bg-black/70">
 
+
+
+
 <!--BARRA DE NAVEGACION -->
-    <nav id="main-nav" class="bg-white shadow-lg fixed top-0 left-0 w-full z-50">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="flex items-center space-x-2 text-2xl font-bold text-gray-800 transition-colors duration-300 ease-in-out">
-                <div class="logo-cube-container relative">
-                    <div class="logo-cube">
-                    <div class="face front"></div>
-                    <div class="face back"></div>
-                    <div class="face right"></div>
-                    <div class="face left"></div>
-                    <div class="face top"></div>
-                    <div class="face bottom"></div>
-                </div>
-                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5 h-5 flex items-center justify-center">
-                    <div class="w-5 h-5 border-2 border-white rounded-full flex items-center justify-center bg-transparent">
-                        <span class="text-white text-xs font-bold transform -rotate-90">S</span>
-                    </div>
-                </div>
-            </div>
-            <span>Re-acon Refrigeración</span>
-        </a>
+<nav id="main-nav" class="bg-white shadow-lg fixed top-0 left-0 w-full z-50">
+
+    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+<a href="#" class="relative flex items-center space-x-2 text-2xl font-bold text-gray-800 group overflow-hidden">
+    
+    <!-- Contenedor de logo + texto -->
+    <span class="relative flex items-center space-x-2 z-10">
+        <img src="iconoairereacon.jpg" 
+             alt="Re-acon cool air"
+             class="h-10 w-10 object-cover rounded-full" />
+        <span>Re-acon cool air</span>
+    </span>
+
+    <!-- Brillo celeste eléctrico -->
+    <span class="absolute inset-0 block 
+                 bg-gradient-to-r from-transparent via-cyan-400 to-transparent 
+                 transform -skew-x-12 -translate-x-full 
+                 group-hover:translate-x-full transition-transform duration-700 ease-in-out">
+    </span>
+</a>
+
+
+
         <div class="hidden md:flex items-center space-x-6">
             <a href="#" class="nav-link relative">Inicio</a>
-            <a href="#productos" class="nav-link relative">Productos</a>
-            <a href="#porque-elegirnos" class="nav-link relative">Servicios</a>
+            <a href="#porque-elegirnos" class="nav-link relative">nosotros</a>
+            <a href="#nuestros-proyectos" class="nav-link relative">Servicios</a>
             <a href="#contacto" class="nav-link relative">Contacto</a>
         </div>
-        <button id="menu-button" class="md:hidden text-gray-800 focus:outline-none">
+
+        <button id="menu-button"
+                class="md:hidden text-gray-800 focus:outline-none">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
         </button>
+
     </div>
-    <div id="mobile-menu" class="hidden md:hidden transition-all duration-300 ease-in-out">
-        <div class="bg-white/30 backdrop-blur-sm shadow-lg py-2 flex flex-col">
-            <a href="#" class="block px-4 py-3 text-gray-800 hover:!bg-white/10">Inicio</a>
-            <a href="#productos" class="block px-4 py-3 text-gray-800 hover:!bg-white/10">Productos</a>
-            <a href="#porque-elegirnos" class="block px-4 py-3 text-gray-800 hover:!bg-white/10">Servicios</a>
-            <a href="#contacto" class="block px-4 py-3 text-gray-800 hover:!bg-white/10">Contacto</a>
+
+    <div id="mobile-menu"
+         class="hidden md:hidden transition-all duration-300 ease-in-out">
+        <div class="bg-white shadow-lg py-2 flex flex-col border-t border-gray-200">
+          <a href="#" class="block px-4 py-3 text-gray-800 font-semibold hover:bg-gray-100 transition duration-150">Inicio</a>
+          <a href="#nuestros-proyectos" class="block px-4 py-3 text-gray-800 font-semibold hover:bg-gray-100 transition duration-150">Productos</a>
+          <a href="#porque-elegirnos" class="block px-4 py-3 text-gray-800 font-semibold hover:bg-gray-100 transition duration-150">Servicios</a>
+          <a href="#contacto" class="block px-4 py-3 text-gray-800 font-semibold hover:bg-gray-100 transition duration-150">Contacto</a>
         </div>
     </div>
 </nav>
 
+
+<main>
+
+<!-- seccion de scroll y trasparencia -->
     <section class="relative text-white pt-20 pb-48 px-5 text-center font-sans overflow-hidden">
         <div class="relative z-20 max-w-7xl mx-auto">
-            <h2 class="text-4xl text-white mb-5 font-bold italic">El Confort que tu Hogar Merece</h2>
+            <h2 class="text-4xl text-white mb-5 font-bold italic">El Confort que tu espacio Merece</h2>
             <p class="text-lg leading-relaxed mb-4 text-gray-300">
-                Creando el clima perfecto para cada espacio.
+                Creando el clima perfecto para cada lugar.
             </p>
             <p class="text-xl font-semibold leading-relaxed text-[#00e5a7]">
-                Más que un negocio, una tradición familiar dedicada a la excelencia desde 1975.
+               Más que un negocio, una tradición familiar dedicada a la excelencia en climatización desde 1975.
             </p>
         </div>
     </section>
 
-<!-- POR QUE ELEGIRNOS -->.
+<!-- POR QUE ELEGIRNOS -->
 <section id="porque-elegirnos" class="bg-white py-16">
     <div class="container mx-auto px-6 text-center">
         <h2 class="text-3xl font-bold text-blue-900 mb-8">¿Por Qué Elegirnos?</h2>
@@ -113,182 +128,286 @@
     </div>
 </section>
 
+<!-- NUESTROS PROYECTOS -->
+<section  id="nuestros-proyectos" class="py-16 bg-white">
+    <div class="container mx-auto px-6 text-center">
+        
+        <h2 class="text-4xl font-bold text-blue-900 mb-4" data-aos="fade-up" data-aos-duration="800">
+            Proyectos Destacados
+        </h2>
+        <p class="text-xl text-gray-600 mb-12" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+            La mejor prueba de nuestro compromiso y calidad.
+        </p>
 
-<!-- SECCION VIDEO CORRIENDO -->.
-    <section class="relative w-full h-96 overflow-hidden flex items-center justify-center text-white">
-        <div class="absolute inset-0 z-0">
-            <video class="w-full h-full object-cover" 
-                src="https://media.istockphoto.com/id/1717148054/video/engineer-in-protective-gear-installing-a-new-ac-unit-outdoors-on-a-roof-mounting-and.mp4?s=mp4-640x640-is&k=20&c=lJSM31Dv0SrdXrEqGn12sDMSrKINGRv-hoF-pNDmj_s="
-                autoplay 
-                loop 
-                muted 
-                playsinline>
-            </video>
-        </div>
-        <div class="relative z-10 text-center px-6 mt-20">
-            <h2 class="text-4xl md:text-5xl font-bold leading-tight drop-shadow-lg">Confort y Tecnología</h2>
-            <p class="mt-4 text-xl drop-shadow-lg">Aires acondicionados de última generación con instalación profesional.</p>
-        </div>
-    </section>
-
-<!-- SECCION PRODUCTOS -->.
-    <section id="productos" class="py-16 seccion-productos-opaca">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-blue-900">Nuestros Productos</h2>
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg overflow-hidden">
-                    <div class="overflow-hidden">
-                        <img src="https://saturnohogar.vtexassets.com/arquivos/ids/157677/.2.jpg?v=638372894314270000" alt="Aire acondicionado Split" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110" />
-                    </div>
-                    <div class="p-6 text-left">
-                        <h3 class="text-xl font-bold text-blue-900">Split 3500 Frigorías</h3>
-                        <p class="text-gray-600 mt-2">Ideal para ambientes de hasta 30m².</p>
-                        <p class="text-2xl font-bold text-blue-500 mt-4">$850.000</p>
-                        <a href="#" class="mt-4 inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 w-full text-center">Comprar</a>
-                    </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <div class="bg-gray-100 rounded-xl shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300" 
+                 data-aos="fade-up"             data-aos-duration="1000"       data-aos-delay="0">            <div class="overflow-hidden h-64">
+                    <img src="imagen2.jpg" alt="Instalación de climatización en residencia" 
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
                 </div>
-                <div class="bg-white rounded-lg overflow-hidden">
-                    <div class="overflow-hidden">
-                        <img src="https://tiendanewsan.com.ar/media/catalog/product/cache/e16223670af7ae8877a6c2db5c335df1/s/4/s4_w18klrpa-3_1.jpg" alt="Aire Inverter" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110" />
-                    </div>
-                    <div class="p-6 text-left">
-                        <h3 class="text-xl font-bold text-blue-900">Inverter 4500 Frigorías</h3>
-                        <p class="text-gray-600 mt-2">Ahorra hasta un 40% en energía.</p>
-                        <p class="text-2xl font-bold text-blue-500 mt-4">$1.500.000</p>
-                        <a href="#" class="mt-4 inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 w-full text-center">Comprar</a>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg overflow-hidden">
-                    <div class="overflow-hidden">
-                        <img src="https://media.falabella.com/falabellaCL/144941332_04/w=800,h=800,fit=pad" alt="Aire Portátil" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110" />
-                    </div>
-                    <div class="p-6 text-left">
-                        <h3 class="text-xl font-bold text-blue-900">Aire Acondicionado Portátil</h3>
-                        <p class="text-gray-600 mt-2">Fácil de mover, sin instalación.</p>
-                        <p class="text-2xl font-bold text-blue-500 mt-4">$120.000</p>
-                        <a href="#" class="mt-4 inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 w-full text-center">Comprar</a>
-                    </div>
+                <div class="p-6 text-left">
+                  <h3 class="text-2xl font-bold text-blue-800 mb-2">Proyectos Corporativos e Institucionales</h3>
+                    <p class="text-gray-600 text-base">
+    Hemos realizado la instalación de sistemas de climatización central para grandes empresas, incluyendo el mantenimiento de equipos especializados en <span class="font-semibold text-blue-500">Trenes Argentinos</span>
+                    </p>
                 </div>
             </div>
+
+            <div class="bg-gray-100 rounded-xl shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300" 
+                 data-aos="fade-up"             data-aos-duration="1000"       data-aos-delay="300">          <div class="overflow-hidden h-64">
+                    <img src="imagen3.jpg" alt="Instalación de sistema VRV en oficina" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
+                </div>
+                <div class="p-6 text-left">
+                  <h3 class="text-2xl font-bold text-blue-800 mb-2">Climatización Integral de Edificios</h3>
+                    <p class="text-gray-600 text-base">
+            Diseño, provisión e instalación de sistemas centralizados de ventilación y climatización <span title="Heating, Ventilation, Air Conditioning (Calefacción, Ventilación y Aire Acondicionado)"
+      class="font-semibold border-b border-dashed border-gray-400 cursor-help">
+    (HVAC)
+              </span> para complejos residenciales y torres corporativas, garantizando el confort total en cada piso.
+                    </p>
+                </div>
+            </div>
+
+          <div class="bg-gray-100 rounded-xl shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300" 
+            data-aos="fade-up"    data-aos-duration="1000"  data-aos-delay="600">  <div class="overflow-hidden h-64">
+                    <img src="mostaza.jpg" alt="Mantenimiento preventivo de equipos industriales" 
+                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
+                </div>
+              <div class="p-6 text-left">
+            <h3 class="text-2xl font-bold text-blue-800 mb-2">Mantenimiento de Locales Gastronómicos</h3>
+          <p class="text-gray-600 text-base">
+            Contrato integral de servicio para el mantenimiento y la reparación de equipos de alta exigencia en espacios gastronómicos. Trabajamos con marcas líderes del sector, como  <span class="font-semibold text-blue-500">Mostaza</span>, referente de la gastronomía argentina.
+          </p>
         </div>
-    </section>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
 
 <!-- SECCION CARROUSELL DE LOGOS DE MARCAS CON LA QUE TRABAJAMOS -->
-    <!-- Carrusel -->
 <section class="bg-gray-50 py-12">
   <div class="max-w-7xl mx-auto px-4 text-center">
-    <h2 class="text-3xl font-bold text-gray-900">Confiamos en</h2>
-    <p class="mt-2 text-lg text-gray-600">Trabajamos con marcas líderes del mercado.</p>
+    <p class="mt-2 text-lg text-gray-900">Trabajamos con marcas líderes del mercado.</p>
   </div>
 
   <div class="mt-8 max-w-6xl mx-auto px-4 relative overflow-hidden">
     <!-- Carrusel -->
-    <div class="flex transition-transform duration-500" id="carousel">
-      <a href="#" class="flex-shrink-0 w-32 h-16 flex items-center justify-center">
-        <img src="https://cdn.simpleicons.org/lg/000000" alt="LG" class="w-full h-full object-contain">
-      </a>
-      <a href="#" class="flex-shrink-0 w-32 h-16 flex items-center justify-center">
-        <img src="https://cdn.simpleicons.org/apple/000000" alt="Apple" class="w-full h-full object-contain">
-      </a>
-      <a href="#" class="flex-shrink-0 w-32 h-16 flex items-center justify-center">
-        <img src="https://cdn.simpleicons.org/google/000000" alt="Google" class="w-full h-full object-contain">
-      </a>
-      <a href="#" class="flex-shrink-0 w-32 h-16 flex items-center justify-center">
-        <img src="https://cdn.simpleicons.org/microsoft/000000" alt="Microsoft" class="w-full h-full object-contain">
-      </a>
-      <a href="#" class="flex-shrink-0 w-32 h-16 flex items-center justify-center">
-        <img src="https://cdn.simpleicons.org/amazon/000000" alt="Amazon" class="w-full h-full object-contain">
-      </a>
+    <div id="carousel" class="flex gap-16 transition-transform duration-500">
+      <!-- BLOQUE DE LOGOS ORIGINAL -->
+      <template id="logos">
+        <a href="#" class="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+          <img src="https://simpleicons.org/icons/lg.svg" alt="LG" class="w-full h-full object-contain">
+        </a>
+        <a href="#" class="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+          <img src="https://global.fujitsu/-/media/Project/Fujitsu/Fujitsu-HQ/assets/img/logo-fujitsu.svg" alt="Fujitsu" class="w-full h-full object-contain">
+        </a>
+        <a href="#" class="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+          <img src="https://www.mitsubishielectric.com/global/common/img/logo.svg" alt="Mitsubishi" class="w-full h-full object-contain">
+        </a>
+        <a href="#" class="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+          <img src="https://simpleicons.org/icons/samsung.svg" alt="Samsung" class="w-full h-full object-contain">
+        </a>
+        <a href="#" class="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+          <img src="https://daikin-argentina.com/wp-content/uploads/2022/11/D_logo.png" alt="Daikin" class="w-full h-full object-contain">
+        </a>
+        <a href="#" class="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+          <img src="https://dcdn-us.mitiendanube.com/stores/005/827/975/themes/common/logo-569070968-1740746976-3320d8a20599e5080859358226f4f88b1740746976-480-0.webp" alt="Panasonic" class="w-full h-full object-contain">
+        </a>
+          <a href="#" class="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+          <img src="https://www.carrier.com.ar/wp-content/themes/carrier-responsive-2016/images/carrier-logo.png" alt="Daikin" class="w-full h-full object-contain">
+        </a>
+      </template>
     </div>
   </div>
 </section>
 
 
-<!-- SECCION ES DE CALCULADORA DE METROS CUADRADOS PARA AIRES  -->
+<!-- SECCION ES COMENTARIOS DE NUESTROS CLIENTES -->
 
-<section id="calculadora" class="bg-gray-100 py-16 text-gray-800">
-  <div class="max-w-md mx-auto p-6 bg-white rounded-2xl shadow-lg">
-    <h2 class="text-3xl font-bold text-center mb-6">Calculador de Metros Cuadrados</h2>
+<section id="seccion-reseñas" class="py-16 bg-gray-800 text-white"> 
+    <div class="container mx-auto text-center px-4"> 
+        <h2 class="text-3xl font-bold text-white mb-4">Lo que nuestros clientes dicen de nosotros</h2>
+        
+        <div class="inline-flex items-center justify-center p-3 mb-10 bg-white rounded-lg shadow-xl">
+            <span class="text-4xl font-extrabold text-gray-800 mr-3">4.9</span>
+            
+            <div class="flex flex-col items-start">
+                <div class="text-yellow-500 text-2xl leading-none">
+                    ★★★★★
+                </div>
+                <p class="text-sm text-gray-500 mt-1">
+                    Basado en las opiniones de Google
+                </p>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            
+            <div class="bg-transparent border border-gray-600 rounded-xl shadow-lg overflow-hidden">
+                <img src="reseña1.jpg" 
+                     alt="Reseña de Google de un cliente satisfecho" 
+                     class="w-full h-auto object-cover">
+            </div>
+
+            <div class="bg-transparent border border-gray-600 rounded-xl shadow-lg overflow-hidden">
+                <img src="reseña2.jpg" 
+                     alt="Comentario positivo de cliente sobre la instalación" 
+                     class="w-full h-auto object-cover">
+            </div>
+
+            <div class="bg-transparent border border-gray-600 rounded-xl shadow-lg overflow-hidden">
+                <img src="reseña3.jpg" 
+                     alt="Recomendación de cliente en Google" 
+                     class="w-full h-auto object-cover">
+            </div>
+        </div>
+        
+        <p class="text-lg text-gray-300 mt-8 mb-4">
+            ¿Quieres ver más? La confianza se construye con transparencia.
+        </p>
+
+      <a href="https://www.google.com/maps/search/?api=1&query=Benito+P%C3%A9rez+Gald%C3%B3s+1525+Valent%C3%ADn+Alsina"
+   target="_blank"
+   rel="noopener noreferrer"
+   title="Leer las 296 opiniones de Re-acon en Google Maps"
+   class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg 
+          hover:bg-blue-700 transition inline-block shadow-md">
+    Ver todas las reseñas en Google
+</a>
+    </div> 
+  </section>
+
+
+<!-- SECCION CALCULADORA DE METROS CUADRADOS Y RECOMENDACION DE AIRES -->
+<section id="calculadora" class="bg-gray-100 py-10 text-gray-800">
+  <div class="max-w-md mx-auto p-6 bg-blue-50 rounded-2xl shadow-xl border border-blue-200">
+    <h2 class="text-3xl font-extrabold text-center mb-5 text-gray-700">Estimador Rápido de Capacidad</h2>
 
     <form id="calcForm" class="space-y-4">
       <div>
-        <label class="block font-medium mb-1" for="ancho">Ancho (m)</label>
+        <label class="block font-semibold mb-1 text-gray-600" for="ancho">Ancho (metros)</label>
         <input id="ancho" type="number" step="0.1" required
-          class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          class="w-full border border-blue-200 rounded-xl p-3 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-150">
       </div>
 
       <div>
-        <label class="block font-medium mb-1" for="largo">Largo (m)</label>
+        <label class="block font-semibold mb-1 text-gray-600" for="largo">Largo (metros)</label>
         <input id="largo" type="number" step="0.1" required
-          class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          class="w-full border border-blue-200 rounded-xl p-3 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-150">
       </div>
 
       <button type="submit"
-        class="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition">
+        class="w-full bg-blue-600 text-white font-bold text-lg py-3 rounded-xl hover:bg-blue-700 transition duration-200 shadow-md transform hover:scale-[1.01]">
         Calcular
       </button>
     </form>
 
-    <div id="resultado" class="mt-6 text-center hidden">
-      <p class="text-lg font-semibold">Área total: <span id="area" class="font-bold text-blue-600"></span> m²</p>
-      <div id="recomendacion" class="mt-4"></div>
+    <div id="resultado" class="mt-6 pt-4 border-t border-blue-200 text-center hidden">
+      <p class="text-xl font-extrabold">Área total: <span id="area" class="font-black text-blue-700"></span> m²</p>
+      <div id="recomendacion" class="mt-3"></div>
     </div>
   </div>
 </section>
 
-<!-- SECCION CONTACTO -->.
- <!-- SECCION CONTACTO -->
-<section id="contacto" class="bg-gray-100 py-16 text-gray-800 text-center">
-  <h3 class="text-4xl font-bold mb-2">Contacto</h3>
-  <h4 class="text-xl text-gray-600 mb-6">Colaboremos</h4>
 
-  <div class="flex justify-center gap-6">
-    <!-- WhatsApp -->
-    <a href="https://wa.me/541163843929"
-       target="_blank"
-       class="inline-flex items-center justify-center rounded-full bg-green-500 text-white w-16 h-16 text-3xl hover:bg-green-600 transition">
-       <i class="fab fa-whatsapp"></i>
-    </a>
+<!-- SECCION CONTACTO -->
 
-    <!-- Instagram -->
-    <a href="#"
-       target="_blank"
-       class="inline-flex items-center justify-center rounded-full bg-pink-500 text-white w-16 h-16 text-3xl hover:bg-pink-600 transition">
-       <i class="fab fa-instagram"></i>
-    </a>
+<section id="contacto" class="bg-gray-100 py-16 text-gray-800">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-start gap-8">
 
-    <!-- Yahoo -->
-    <a href="mailto:reaconaire@yahoo.com.ar"
-       target="_blank"
-       class="inline-flex items-center justify-center rounded-full bg-purple-500 text-white w-16 h-16 text-3xl hover:bg-purple-600 transition">
-       <i class="fab fa-yahoo"></i>
-    </a>
+      <div class="w-full text-center md:text-left md:w-7/12">
+        <h3 class="text-4xl font-bold mb-2">Contactanos </h3>
+        
+        <h4 class="text-xl text-gray-600 mb-4">Estamos para ayudarte</h4>
 
-    <!-- Facebook -->
-    <a href="https://www.facebook.com/ReAcon2000"
-       target="_blank"
-       class="inline-flex items-center justify-center rounded-full bg-blue-500 text-white w-16 h-16 text-3xl hover:bg-blue-600 transition">
-       <i class="fab fa-facebook-f"></i>
-    </a>
+      <div class="inline-block text-blue-600 font-semibold text-lg transition duration-300 mb-4"
+      data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800"> 
+      <i class="fas fa-chevron-down animate-bounce -ml-2"></i> 
+      ¿tenes un proyecto? hablemos...
+      <i class="fas fa-chevron-down animate-bounce ml-2"></i>
+      </div>
+
+        <div class="flex justify-center md:justify-start gap-8 mb-6">
+          <a href="https://wa.me/541163843929" target="_blank" class="inline-flex items-center justify-center text-gray-500 hover:text-green-500 cursor-pointer w-12 h-12 text-3xl rounded-full transition-all duration-300 ease-out hover:ring-2 hover:ring-green-500 hover:scale-110">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://www.instagram.com/reacon_cool_air" target="_blank" class="inline-flex items-center justify-center text-gray-500 hover:text-pink-500 cursor-pointer w-12 h-12 text-3xl rounded-full transition-all duration-300 ease-out hover:ring-2 hover:ring-pink-500 hover:scale-110">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="mailto:reaconaire@yahoo.com.ar" target="_blank" class="inline-flex items-center justify-center text-gray-500 hover:text-purple-500 cursor-pointer w-10 h-10 text-2xl rounded-full transition-all duration-300 ease-out hover:ring-2 hover:ring-purple-500 hover:scale-110">
+            <i class="fab fa-yahoo"></i>
+          </a>
+          <a href="https://www.facebook.com/ReAcon2000" target="_blank" class="inline-flex items-center justify-center text-gray-500 hover:text-blue-500 cursor-pointer w-10 h-10 text-2xl rounded-full transition-all duration-300 ease-out hover:ring-2 hover:ring-blue-500 hover:scale-110">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+
+        <div class="bg-white rounded-lg p-3 shadow mt-4">
+          <p class="text-sm font-semibold text-gray-700">Horario de atención</p>
+          <p class="text-sm text-gray-600">Lun–Vie: 09:00–18:00 · Sáb: 09:00–13:00 · Dom: Cerrado</p>
+        </div>
+      </div>
+
+      <div class="w-full md:w-5/12 space-y-4">
+        <div class="relative w-full h-48 rounded-2xl overflow-hidden shadow-md">
+          <iframe src="https://www.google.com/maps?q=Benito+P%C3%A9rez+Gald%C3%B3s+1525+Valent%C3%ADn+Alsina+Buenos+Aires&output=embed"
+            class="absolute inset-0 w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            aria-label="Mapa: Re-acon cool air — Benito Pérez Galdós 1525"></iframe>
+        </div>
+
+        <div class="bg-white rounded-lg p-3 shadow">
+          <p class="text-sm text-gray-700 font-semibold mb-1">Dirección</p>
+          <p class="text-sm text-gray-600 mb-2">Benito Pérez Galdós 1525, Valentín Alsina, Provincia de Buenos Aires</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Benito+P%C3%A9rez+Gald%C3%B3s+1525+Valent%C3%ADn+Alsina" target="_blank" rel="noopener noreferrer" class="text-blue-600 text-sm hover:underline">Abrir en Google Maps</a>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
+</main>
 
-<!-- SECCION FOOTER PIE DE PAGUINA -->.
- <footer class="bg-gray-800 text-gray-300 py-8">
+<!-- SECCION FOOTER PIE DE PAGUINA -->
+<footer class="bg-gray-800 text-gray-300 py-12">
     <div class="container mx-auto text-center px-6">
-        <p>&copy; 2025 re-acon. Todos los derechos reservados.</p>
-        <p class="text-xs text-gray-500 mt-2">
-            Contenido audiovisual empleado de forma ética y sin intención maliciosa.
-        </p>
+        <div class="pt-2 pb-12"> 
+            <p>&copy; <span id="year">2025</span> re-acon cool air. Todos los derechos reservados.</p>
+            
+            <p class="text-xs text-gray-500 mt-2">
+                Imágenes empleadas de forma ética y sin intención maliciosa
+            </p>
+            
+           <p class="text-xs text-gray-400 mt-2">
+    Diseño y Desarrollo por 
+    <a href="https://www.linkedin.com/in/luis-largosta" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="hover:text-blue-400 underline font-medium">
+        Luis Largosta
+    </a>.
+</p>
+        </div>
     </div>
 </footer>
-    
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-    <script src="main.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<!-- AOS (si lo usas) -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script> AOS.init(); </script>
+
+<!-- Tu archivo JavaScript -->
+<script src="main.js"></script>
+
 
 </body>
 </html>

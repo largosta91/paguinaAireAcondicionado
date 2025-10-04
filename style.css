@@ -1,5 +1,4 @@
 /* ===== FONDO GENERAL DEL BODY ===== */
-
 body {
     position: relative;
     min-height: 100vh;
@@ -25,10 +24,6 @@ body > * {
     position: relative;
     z-index: 1;
 }
-
-
-
-
 
 
 
@@ -115,6 +110,24 @@ body > * {
 }
 
 
+.btn-call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #999; /* gris opaco */
+    color: white;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-call:hover {
+    background-color: #00aaff; /* color al hacer hover, podés cambiar */
+    color: white;
+}
 /* =============== LOGO DEL CUBO  ================== */
 
 
@@ -135,4 +148,5 @@ nav#main-nav.nav-scroll {
 .borde-h2 {
     border: 2px solid white; /* 2px, sólido y color blanco para que resalte */
 }
+
 
