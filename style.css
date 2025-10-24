@@ -1,152 +1,225 @@
-/* ===== FONDO GENERAL DEL BODY ===== */
+/* ===========================
+   GLOBAL / RESET
+   =========================== */
+html, body {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
 body {
     position: relative;
     min-height: 100vh;
-
-    /* Imagen de fondo */
-    background-image: url('https://media.adeo.com/media/3995641/media.jpeg?width=600&crop=16:9');
-    background-size: cover;        /* Cubrir todo el body */
-    background-attachment: fixed;  /* Efecto parallax al hacer scroll */
-    background-position: center;   /* Centrado de la imagen */
+    background-image: url('imagenprincipalbody.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
-/* Overlay negro semi-transparente */
 body::before {
     content: '';
     position: absolute;
-    inset: 0;                     /* top:0; right:0; bottom:0; left:0 */
-    background-color: rgba(0,0,0,0.7); /* negro con 70% opacidad */
-    z-index: 0;                   /* Debajo de todo el contenido */
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 0;
+    pointer-events: none;
 }
 
-/* Para que el contenido quede por encima del overlay */
 body > * {
     position: relative;
     z-index: 1;
 }
 
+/* ===========================
+   NAVEGACIÓN
+   =========================== */
+/* ===========================
+   NAVEGACIÓN
+   =========================== */
+nav#main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
 
+/* Gradiente en el container interior del nav */
+nav#main-nav > div:first-child::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+        to right, 
+        transparent 0%, 
+        rgba(34, 211, 238, 0.6) 15%, 
+        rgba(6, 182, 212, 1) 50%, 
+        rgba(34, 211, 238, 0.6) 85%, 
+        transparent 100%
+    );
+    z-index: 10;
+    pointer-events: none;
+}
 
-/* Animación para los link de navegacion */
+/* Asegurar que el div tenga position relative */
+nav#main-nav > div:first-child {
+    position: relative;
+}
+/* ===========================
+   HERO ANIMATIONS
+   =========================== */
+.hero-animate {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================
+   ICONOS FLOTANTES (COPOS 50% más pequeños)
+   =========================== */
+.floating-icon {
+    position: absolute;
+    z-index: 10;
+    opacity: 0.3;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
+
+.floating-icon i {
+    font-size: 1.5rem; /* 50% del tamaño original (era 3rem aprox) */
+    line-height: 1;
+    display: inline-block;
+}
+
+/* Posiciones iniciales */
+.floating-icon-1 { top: 20%; left: 10%; }
+.floating-icon-2 { top: 35%; left: 18%; }
+.floating-icon-3 { top: 50%; left: 12%; }
+.floating-icon-4 { top: 65%; left: 22%; }
+
+/* ===========================
+   CONTADORES
+   =========================== */
+.counter-animated {
+    display: inline-block;
+    min-width: 48px;
+}
+
+/* ===========================
+   BOTÓN WHATSAPP STICKY
+   =========================== */
+@keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 2.5s infinite;
+}
+
+/* ===========================
+   CARRUSEL DE MARCAS
+   =========================== */
+#carousel {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    transform: translateX(0);
+    transition: transform 0.5s linear;
+}
+
+#carousel a {
+    flex-shrink: 0;
+    width: 8rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#carousel img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===========================
+   EFECTOS ESPECIALES
+   =========================== */
+.text-transparent.bg-clip-text {
+    filter: drop-shadow(0 0 20px rgba(34, 211, 238, 0.3));
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 768px) {
+    .floating-icon {
+        display: none;
+    }
+
+    #carousel {
+        gap: 1rem;
+    }
+
+    #carousel a {
+        width: 5.5rem;
+        height: 3rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
 .nav-link {
-    color: #1f2937; /* gris oscuro */
+    color: #1f2937;
     text-decoration: none;
     position: relative;
+    display: inline-block; /* Esto ayuda */
+    padding-bottom: 4px; /* Espacio para la línea */
 }
 
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: -2px; /* distancia de la letra */
+    bottom: 0; /* Cambiado de -2px a 0 */
     left: 0;
     width: 0;
-    height: 2px; /* grosor de la línea */
-    background-color: #3b82f6; /* azul */
+    height: 2px;
+    background: linear-gradient(to right, #22d3ee, #06b6d4); /* Celeste degradado */
     transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #06b6d4; /* Color celeste al hover */
 }
 
 .nav-link:hover::after {
     width: 100%;
 }
-
-/* ESTILOS DE SECCIONES        */
-/* ==================================== */
-
-/* Sección de productos */
-.seccion-productos-opaca {
-    background-color: white;
-    padding: 50px 20px;
-}
-
-/* ESTILOS DE BOTONES          */
-/* ==================================== */
-
-/* Botones finales (WhatsApp, Instagram, Gmail) */
-.social-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-/* Estilos base para todos los botones */
-.social-buttons .btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #999; /* gris opaco por defecto */
-    color: white;           /* ícono en blanco */
-    font-size: 24px;
-    transition: all 0.3s ease;
-    cursor: pointer;        /* cursor pointer al pasar por el botón */
-}
-
-/* Hover: cambiar color según marca */
-
-/* WhatsApp */
-.btn-whatsapp:hover {
-    background-color: #25D366;
-    color: white;
-}
-
-/* Instagram */
-.btn-instagram:hover {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    color: white;
-}
-
-/* Yahoo */
-.btn-yahoo:hover {
-    background-color: #6001d2; /* rojo violáceo aproximado */
-    color: white;
-}
-
-/* Facebook */
-.btn-facebook:hover {
-    background-color: #1877f2; /* azul */
-    color: white;
-}
-
-
-.btn-call {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: #999; /* gris opaco */
-    color: white;
-    font-size: 24px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.btn-call:hover {
-    background-color: #00aaff; /* color al hacer hover, podés cambiar */
-    color: white;
-}
-/* =============== LOGO DEL CUBO  ================== */
-
-
-/* efctos de la barra mav pasa a ser blanca cuando llega a la otra seccion */
-nav#main-nav.nav-scroll {
-    background-color: white !important;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-/* Nuevo efecto de elevación al pasar el mouse sobre las tarjetas  seccion por que elegirnos*/
-.card-elevacion:hover {
-    transform: translateY(-12px) scale(1.05); /* Se eleva y se agranda un poco más */
-    box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Sombra más grande */
-}
-
-/* seccion del video corriendo sin parar */
-/* Borde para el h2 */
-.borde-h2 {
-    border: 2px solid white; /* 2px, sólido y color blanco para que resalte */
-}
-
-
