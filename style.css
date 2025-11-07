@@ -1,6 +1,4 @@
-/* ===========================
-   GLOBAL / RESET
-   =========================== */
+
 html, body {
     box-sizing: border-box;
     width: 100%;
@@ -16,7 +14,6 @@ html, body {
 body {
     position: relative;
     min-height: 100vh;
-    background-image: url('imagenprincipalbody.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
